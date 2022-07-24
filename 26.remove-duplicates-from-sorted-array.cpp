@@ -13,13 +13,13 @@ class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
         int k=0;
-        for(int i:nums)
-            if(ranges::binary_search()){
-               nums[k]=nums[i];
-               k++;
+            for(int i=1;i<nums.size();i++){
+                if(nums[i]!=nums[k]){
+                    k++;
+                    nums[k]=nums[i];
+                    }
             }
-        return k;
+            return k+1;
     }
 };
 // @lc code=end
-

@@ -3,7 +3,8 @@
         "vector": "cpp",
         "cmath": "cpp",
         "xtree": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "xmemory": "cpp"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }

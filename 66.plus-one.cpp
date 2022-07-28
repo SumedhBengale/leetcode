@@ -6,30 +6,22 @@
 
 // @lc code=start
 #include<vector>
-
+#include<iostream>
 using namespace std;
 class Solution {
 public:
     vector<int> plusOne(vector<int>& digits) {
-        for(int i=digits.size()-1;i>=0;i--){
-            if(digits[digits.size()-1]==9){
-                if(digits.size()==1){
-                    digits.resize(2);
-                }
-                for(int j=digits.size()-2;j>=0;j++){
-                    if(digits[j]==9){
-                        digits[j]=0;
-                    }
-                    else{
-                        digits[j]++;
-                        break;
-                    }
-                }
+        int size = digits.size()-1;
+        while(size>=0){
+            if (digits[size]+1 >9){
+                digits[size] = digits[size] + 1 - 10;
+                if(size==0) digits.insert(digits.begin(),1);
             }
             else{
-                digits[digits.size()-1]++;
+                digits[size] = digits[size] + 1;
                 break;
-            }
+            } 
+            size--;
         }
         return digits;
     }

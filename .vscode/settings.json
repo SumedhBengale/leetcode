@@ -4,7 +4,8 @@
         "cmath": "cpp",
         "xtree": "cpp",
         "string": "cpp",
-        "xmemory": "cpp"
+        "xmemory": "cpp",
+        "bitset": "cpp"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }

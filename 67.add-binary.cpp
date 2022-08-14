@@ -6,18 +6,29 @@
 
 // @lc code=start
 #include<string>
-#include<bitset>
-#include<regex>
 using namespace std;
 class Solution {
 public:
     string addBinary(string a, string b) {
-        long x=stoi(a,0,2);
-        long y=stoi(b,0,2);
-        long z=x+y;
-        long ret=stoi(bitset<32>(z).to_string());
+        int sum=0;
+        int carry=0;
+        string result;
+        int i=a.length()-1;
+        int j=b.length()-1;
 
-        return to_string(ret);
+    while(i<=0||j<=0){
+            sum=carry;
+            if(i<=0) sum+=a[i];
+            if(j<=0) sum+=b[j];
+            carry = sum>1 ? 1 : 0;
+            result+=to_string(sum%2);
+            i--;
+            j--;
+        }
+
+        if(carry) result += to_string(carry);
+        reverse(result.begin(),result.end());
+        return result;
     }
 };
 // @lc code=end
